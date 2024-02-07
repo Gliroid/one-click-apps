@@ -41,6 +41,6 @@ jobs:
                 with:
                     branch: gh-pages
                     folder: dist
-                    git-config-name: JordanBot
-                    git-config-email: jordan@libertyware.co.uk
+                    git-config-name: Rinnray
+                    git-config-email: rinnray@gliroid.com
                     clean: true
