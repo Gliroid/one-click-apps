@@ -1,0 +1,29 @@
+captainVersion: 4
+services:
+  $$cap_appname:
+    image: chibisafe/chibisafe:$$cap_version
+    volumes:
+      - $$cap_appname-db:/home/node/chibisafe/database:rw
+      - $$cap_appname-uploads:/home/node/chibisafe/uploads:rw
+      - $$cap_appname-logs:/home/node/chibisafe/logs:rw
+    restart: always
+    ports:
+      - '24424:8000'
+    caproverExtra:
+      containerHttpPort: 8000
+
+caproverOneClickApp:
+    variables:
+      - id: $$cap_version
+        label: Chibisafe
+        description: Choose the latest version of Chibisafe from https://hub.docker.com/r/chibisafe/chibisafe/tags
+        defaultValue: v5.6.0
+    instructions:
+      start: |-
+          Build Chibisafe application.
+      end: |-
+          Chibisafe has been successfully deployed!
+          Your service is available at https://$$cap_appname.$$cap_root_domain
+    displayName: Chibisafe
+    isOfficial: true
+    description: Chibisafe is a file uploader service written in node that aims to to be easy to use and easy to set up.
