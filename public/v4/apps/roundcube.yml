@@ -19,6 +19,8 @@ services:
       ROUNDCUBEMAIL_DB_PASSWORD: $$cap_db_pass
       ROUNDCUBEMAIL_DB_NAME: $$cap_db_name
     caproverExtra:
+    depends_on:
+      - $$cap_appname-db
     containerHttpPort: 8000 
 
   # Postgres
