@@ -6,7 +6,7 @@ services:
       - $$cap_appname-data-html:/var/www/html
     restart: always
     ports:
-      - '8000:80' 
+      - '80:80' 
     environment:
       ROUNDCUBEMAIL_DEFAULT_HOST: $$cap_host_name
       ROUNDCUBEMAIL_SMTP_SERVER: $$cap_host_name
